@@ -11,11 +11,12 @@ class Book extends Component {
         smallThumbnail: PropTypes.string
       })
     }),
-    bookShelves: PropTypes.array.isRequired
+    bookShelves: PropTypes.array.isRequired,
+    onBookMove: PropTypes.func.isRequired
   };
 
   render() {
-    const { book, bookShelves } = this.props;
+    const { book, bookShelves, onBookMove } = this.props;
 
     return (
       <div className="book">
@@ -27,6 +28,7 @@ class Book extends Component {
           </div>
           <div className="book-shelf-changer">
             <select
+              onChange={event => onBookMove(book, event.target.value)}
               value={book.shelf ? book.shelf : 'none'}
             >
               <option disabled>Move to...</option>

@@ -9,6 +9,7 @@ class BookSearch extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
     bookShelves: PropTypes.array.isRequired,
+    onBookMove: PropTypes.func.isRequired
   };
 
   state = {
@@ -47,7 +48,7 @@ class BookSearch extends Component {
 
   render() {
     const { query, searchBooks } = this.state;
-    const { bookShelves } = this.props;
+    const { bookShelves, onBookMove } = this.props;
 
     return (
       <div className="search-books">
@@ -77,6 +78,7 @@ class BookSearch extends Component {
                 <Book
                   book={book}
                   bookShelves={bookShelves}
+                  onBookMove={onBookMove}
                 />
               </li>
             ))}
