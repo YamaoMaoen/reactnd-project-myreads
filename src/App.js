@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Link } from 'react-router-dom'
 import BookShelf from './BookShelf'
+import BookSearch from './BookSearch'
 import './App.css'
 
 class BooksApp extends Component {
